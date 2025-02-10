@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Music4Whites",
+    "version": "0.1",
+    "permissions": ["activeTab", "background", "storage"],
+    "host_permissions": ["*://*.youtube.com/*", "*://*.spotify.com/*", "*://*.pandora.com/*"],
+    "background":{
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/*", "*://*.spotify.com/*", "*://*.pandora.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
