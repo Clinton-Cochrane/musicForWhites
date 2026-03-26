@@ -9,10 +9,14 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV /media/workstation/Storage/code/musicForWhitePeople/musicForWhites/.venv
+set _VENV_SCRIPT="$0"
+set _VENV_DIR="`cd \"`dirname \"$_VENV_SCRIPT\"`/..\" && pwd`"
+setenv VIRTUAL_ENV "$_VENV_DIR"
+unset _VENV_SCRIPT
+unset _VENV_DIR
 
 set _OLD_VIRTUAL_PATH="$PATH"
-setenv PATH "$VIRTUAL_ENV/"bin":$PATH"
+setenv PATH "$VIRTUAL_ENV/bin:$PATH"
 
 
 set _OLD_VIRTUAL_PROMPT="$prompt"

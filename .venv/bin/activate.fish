@@ -33,10 +33,12 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /media/workstation/Storage/code/musicForWhitePeople/musicForWhites/.venv
+set -l _VENV_SCRIPT (status --current-filename)
+set -gx VIRTUAL_ENV (cd (dirname $_VENV_SCRIPT)/..; pwd)
+set -e _VENV_SCRIPT
 
 set -gx _OLD_VIRTUAL_PATH $PATH
-set -gx PATH "$VIRTUAL_ENV/"bin $PATH
+set -gx PATH "$VIRTUAL_ENV/bin" $PATH
 
 # Unset PYTHONHOME if set.
 if set -q PYTHONHOME
