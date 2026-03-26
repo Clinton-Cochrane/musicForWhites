@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Music4Whites",
+    "name": "Music Word Filter",
     "version": "0.1",
-    "permissions": ["activeTab", "background", "storage"],
+    "permissions": ["activeTab", "tabs", "storage", "scripting"],
     "host_permissions": ["*://*.youtube.com/*", "*://*.spotify.com/*", "*://*.pandora.com/*"],
     "background":{
         "service_worker": "background.js"
